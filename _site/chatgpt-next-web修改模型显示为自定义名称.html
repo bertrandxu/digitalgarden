@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+
+  <link rel="canonical" href="http://localhost:4000/chatgpt-next-web%E4%BF%AE%E6%94%B9%E6%A8%A1%E5%9E%8B%E6%98%BE%E7%A4%BA%E4%B8%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%90%8D%E7%A7%B0" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="问题描述">
+
+  <meta property="og:site_name" content="BertrandDigitalGarden">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBYSXF7WKD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DBYSXF7WKD');
+  </script> -->
+  
+  <!-- 
+  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />  
+  -->
+  
+  
+  <!-- <script async defer data-website-id="0dc17886-9c5c-4bb7-b097-104eb7c28c72" src="https://umami-production-7220.up.railway.app/umami.js"></script> -->
+  
+  
+  <!-- Start of Howxm client code snippet -->
+  <script>
+  function _howxm(){_howxmQueue.push(arguments)}
+  window._howxmQueue=window._howxmQueue||[];
+  _howxm('setAppID','352e66d3-cc84-42ce-ac80-a43a12abf84b');
+  (function(){var scriptId='howxm_script';
+  if(!document.getElementById(scriptId)){
+  var e=document.createElement('script'),
+  t=document.getElementsByTagName('script')[0];
+  e.setAttribute('id',scriptId);
+  e.type='text/javascript';e.async=!0;
+  e.src='https://static.howxm.com/sdk.js';
+  t.parentNode.insertBefore(e,t)}})();
+  </script>
+  <!-- End of Howxm client code snippet -->
+  
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "jurm89uqvq");
+  </script>
+  
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+
+  <link rel="stylesheet" href="/styles.css">
+
+  
+  <meta property="og:description" content="问题描述"/>
+  
+
+  
+  <meta property="og:title" content="ChatGPT-Next-Web修改模型显示为自定义名称">
+  <meta property="og:type" content="article">
+  
+
+  
+  <meta property="article:published_time" content="2024-10-22T22:54:30+08:00">
+  <meta property="article:author" content="http://localhost:4000/">
+  
+
+  <meta property="og:url" content="http://localhost:4000/chatgpt-next-web%E4%BF%AE%E6%94%B9%E6%A8%A1%E5%9E%8B%E6%98%BE%E7%A4%BA%E4%B8%BA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%90%8D%E7%A7%B0" />
+
+  
+
+  <title>
+    
+      ChatGPT-Next-Web修改模型显示为自定义名称 &mdash; BertrandDigitalGarden
+    
+  </title>
+</head>
+
+  <body>
+    <nav><div>
+    <a class="internal-link" href="/"><b>BertrandDigitalGarden</b></a>
+</div>
+</nav>
+    <div class="wrapper">
+      <main><article>
+  <div>
+    <h1>ChatGPT-Next-Web修改模型显示为自定义名称</h1>
+    <!-- 更新时间一直都是显示为构建时间，先屏蔽 -->
+    <time datetime="2024-03-20">
+      创建于2024-03-20 ，更新于 2024-03-20
+      
+    </time> 
+  </div>
+
+  <div id="notes-entry-container">
+    <content>
+      <html><body>
+<h2 id="问题描述">问题描述</h2>
+
+<p>如下图所示，我们有时候很难记住模型那一长串字符，是否可以通过更加直观的文字呈现方式实现？</p>
+
+<p><a href="https://www.giftedpm.com/wp-content/uploads/2023/12/222-1.png" target="_blank"><img src="https://www.giftedpm.com/wp-content/uploads/2023/12/222-1.png" alt="模型代号"></a></p>
+
+<p>答案是肯定的，本文会教你如何实现自定义文字显示模型，从而代替用模型代号显示的方式，让你在选择模型的时候更加方便。</p>
+
+<p><a href="https://www.giftedpm.com/wp-content/uploads/2023/12/111.png" target="_blank"><img src="https://www.giftedpm.com/wp-content/uploads/2023/12/111.png" alt="模型名称自定义"></a></p>
+
+<h2 id="操作步骤">操作步骤</h2>
+
+<p>分别修改如下文件：</p>
+
+<p>/app/constan.ts文件，新增“description”字段。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">const</span> <span class="nx">DEFAULT_MODELS</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gpt-4</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">available</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+
+<span class="c">&lt;!--</span><span class="nx">找到从第99行开始的代码</span><span class="err">，</span><span class="nx">改为如下</span><span class="o">--&gt;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">DEFAULT_MODELS</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gpt-4</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="dl">"</span><span class="s2">最强模型</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">available</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="p">},</span>
+</code></pre></div></div>
+
+<p>/app/client/platforms/openai.ts文件，新增返回值。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="nx">chatModels</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">m</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="nx">m</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">available</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">}));</span>
+
+<span class="c">&lt;!--</span><span class="nx">找到第323行开始的代码</span><span class="err">，</span><span class="nx">改为如下</span><span class="o">--&gt;</span>
+
+<span class="k">return</span> <span class="nx">chatModels</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">m</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="na">name</span><span class="p">:</span> <span class="nx">m</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+      <span class="na">description</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+      <span class="na">available</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="p">}));</span>
+</code></pre></div></div>
+
+<p>/app/client/api.ts文件，修改LLMModel模型参数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">interface</span> <span class="nx">LLMModel</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">available</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">&lt;!--</span> <span class="nx">找到第41行开始的代码</span><span class="err">，</span><span class="nx">改为如下</span><span class="o">--&gt;</span>
+
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">LLMModel</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">description</span><span class="p">:</span> <span class="nx">string</span><span class="p">;</span>
+  <span class="nl">available</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>改完以上三个文件后，即可部署，如需添加模型，只需要在/app/constan.ts文件添加即可，其中description的值即为模型对外显示的自定义内容。</p>
+</body></html>
+    </content>
+
+    <side style="font-size: 0.9em">
+      <h3 style="margin-bottom: 1em">反向链接：</h3>
+      
+      <div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(1fr);">
+      
+        <div class="backlink-box">
+        <a class="internal-link" href="/%E9%80%9A%E8%BF%87nextchat%E4%BD%8E%E6%88%90%E6%9C%AC%E7%BB%99%E8%87%AA%E5%B7%B1%E6%88%96%E5%AE%A2%E6%88%B7%E9%83%A8%E7%BD%B2gpt%E7%A8%8B%E5%BA%8F">通过NextChat部署GPT程序</a><br>
+        <div style="font-size: 0.9em">引言
+</div>
+        </div>
+      
+      </div>
+      
+    </side>
+  </div>
+</article>
+
+<!-- <hr> -->
+
+<!-- 图谱的性能太差，先屏蔽了 --></main>
+      <footer><!-- <script src="https://giscus.app/client.js"
+        data-repo="oldwinter/knowledge-garden"
+        data-repo-id="R_kgDOHT-NGQ"
+        data-category="备发布站的评论系统"
+        data-category-id="DIC_kwDOHT-NGc4CQ3PF"
+        data-mapping="og:title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script> -->
+
+
+<!--
+<div id="waline"></div>
+  <script>
+    Waline.init({
+      el: '#waline',
+      serverURL: 'https://waline.oldwinter.top',
+    });
+  </script> 
+--></footer>
+    </div>
+
+    <!-- That file is not particularly elegant. This will need a refactor at some point. -->
+<style>
+  content a.internal-link {
+    border-color: #8b88e6;
+    background-color: #efefff;
+  }
+
+  #tooltip-wrapper {
+    background: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    width: 400px;
+    height: 400px; /* 悬浮卡片改高一点 */
+    font-size: 0.8em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 100ms;
+  }
+
+  /* #tooltip-wrapper:after {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+		width: 100%;
+		height: 75px;
+  } */
+</style>
+<!-- 给悬浮预览卡片加滚动条。 -->
+<div style="opacity: 0; display: none; overflow-y: scroll;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function() {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function() {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop
+
+    if (event.target.host === window.location.host) {
+      iframe.src = event.target.href
+      iframe.onload = function() {
+        tooltipContentHtml = ''
+        tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+        tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
+
+        tooltipContent.innerHTML = tooltipContentHtml
+
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function() {
+          tooltipWrapper.style.opacity = 1;
+        }, 1)
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+          tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+          tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function(_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('touchend', function(_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('touchend', function(_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function(event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  document.querySelectorAll('content a').forEach(setupListeners);
+</script>
+
+  </body>
+</html>
