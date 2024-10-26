@@ -2,12 +2,50 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    <nav>{% include nav.html %}</nav>
+
     <div class="wrapper">
+      <nav>{% include nav.html %}</nav>
+      
       <main>{{ content }}</main>
+      
       <footer>{% include footer.html %}</footer>
     </div>
 
-    {% include link-previews.html wrapperQuerySelector="content" %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://unpkg.com/scrollnav@3.0.1/dist/scrollnav.min.umd.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const scrollNav = document.querySelector('.scroll-nav');
+        const articleContent = document.querySelector('#notes-entry-container');
+        
+        const headings = Array.from(articleContent.querySelectorAll('h1, h2'));
+    
+        if (headings.length === 0) {
+            scrollNav.style.display = 'none'; // 如果没有 h1 或 h2 标题，隐藏侧边栏目录
+        } else {
+            headings.forEach((heading, index) => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('scroll-nav__item');
+        
+                const link = document.createElement('a');
+                link.href = `#section-${index + 1}`;
+                link.textContent = heading.textContent;
+                link.classList.add('scroll-nav__link');
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    heading.scrollIntoView({ behavior: 'smooth' });
+                });
+        
+                listItem.appendChild(link);
+                scrollNav.appendChild(listItem);
+            });
+        }
+      });
+    </script>
+
+    {% include link-previews.html wrapperQuerySelector=".wrapper main" %}
   </body>
 </html>
+
