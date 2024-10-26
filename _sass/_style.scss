@@ -11,7 +11,7 @@ body {
   box-sizing: content-box;
   font-family: $font-family;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.5;
   padding: 4vh 6vw;
   overflow-x: hidden;
   color: $color-text;
@@ -19,7 +19,7 @@ body {
   max-width: 63em;
 
   @media (min-width: 820px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -143,4 +143,62 @@ code {
 .invalid-link-brackets {
   color: #ccc;
   cursor: help;
+}
+
+.scroll-nav {
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  padding: 15px;
+  position: sticky;
+  top: 10px;
+}
+
+@media screen and (min-width: 700px) {
+  .scroll-nav {
+    float: right;
+    padding: 15px 5px;
+    width: 250px;
+    top: 60px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .scroll-nav {
+    width: 250px;
+  }
+}
+
+.scroll-nav__list {
+  margin: 0;
+  padding-left: 0.4em;
+  list-style: none !important;
+}
+
+.scroll-nav__list li {
+  list-style: none; /* 去掉小圆点 */
+}
+
+.scroll-nav__item {
+  margin-bottom: 3px;
+}
+
+.scroll-nav__item--active {
+  font-weight: 600;
+  position: relative;
+}
+
+.scroll-nav__item--active:before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: black;
+  position: absolute;
+  left: -20px;
+  top: 2px;
+}
+
+.scroll-nav__link {
+  color: #0645ad;
+  text-decoration: none;
 }
