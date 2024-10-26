@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date created: 2024-03-05
 date modified: 2024-03-05
 id: home
@@ -7,14 +7,15 @@ layout: page
 permalink: /
 tags:
   - 首页
-title: AboutTheGarden
+title: About The Garden
 description:
 ---
 这里是一座「全开放式」的[[数字花园]]，由卡片笔记编织而成。目前主要在浇灌这几个领域：
 
-- 禅与[[Chatgpt]]
-- 职场
-- 学习
+- AI与心理
+- 禅思
+- 管理运营
+- 自我成长
 
 在2023年初，我在Github上发现了一名工程师的[数字花园](https://github.com/oldwinter/knowledge-garden)，正好启发了我，我一直想搭一个博客，但是迟迟未动手，想着还无法输出扎实的内容，虽然有不少感悟，却连不成一篇篇文章。数字花园可能是一个比较适合的载体，每一个想法都是一个种子，需要不断浇灌，某个种子可能会长成一棵树，大部分种子只会长成一株草，或者一株灌木，最终只是个人的一个思想花园，而不是一片森林。
 
