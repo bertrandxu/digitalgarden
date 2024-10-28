@@ -3,6 +3,7 @@
   {% include head.html %}
   <body>
 
+
     <div class="wrapper">
       <nav>{% include nav.html %}</nav>
       
@@ -25,6 +26,12 @@
         if (headings.length === 0) {
             scrollNav.style.display = 'none'; // 如果没有 h1 或 h2 标题，隐藏侧边栏目录
         } else {
+
+            const headingTitle = document.createElement('h3');
+            headingTitle.textContent = '目录';
+            headingTitle.classList.add('scroll-nav__title');
+            scrollNav.insertBefore(headingTitle, scrollNav.firstChild);
+
             headings.forEach((heading, index) => {
                 const listItem = document.createElement('li');
                 listItem.classList.add('scroll-nav__item');

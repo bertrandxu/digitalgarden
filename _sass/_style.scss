@@ -89,7 +89,7 @@ a {
     position: relative;
     top: -0.5em;
     font-size: 0.7em;
-    content: "↗";
+    content: "";
     color: #aaaaaa;
   }
   &.internal-link:after,
@@ -107,6 +107,51 @@ a {
 nav {
   margin: 1em 0 3em;
 }
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* 可根据需要设置背景颜色 */
+  z-index: 1000; /* 确保导航栏位于其他内容的上方 */
+  /* 可根据需要添加其他样式，如边框、阴影等 */
+}
+
+.sidebar-profile {
+  text-align: center;
+  
+  img {
+      border-radius: 30%;
+      width: 110px; /* Adjust size as needed */
+      height: 100px; /* Adjust size as needed */
+  }
+  
+  h2 {
+      margin-top: 10px;
+      font-size: 1.5em;
+  }
+  
+  p {
+      margin-top: 5px;
+      font-size: 1em;
+  } 
+  
+  .social-links {
+      margin-top: 10px;
+      
+      a {
+          display: inline-block;
+          margin-right: 10px;
+          color: #333; /* Adjust color as needed */
+          
+          i {
+              font-size: 1.5em;
+          }
+      }
+  }
+}
+
 
 #notes-entry-container {
   display: grid;
@@ -146,8 +191,8 @@ code {
 }
 
 .scroll-nav {
-  background-color: #f8f9fa;
-  border: 1px solid #a2a9b1;
+  background-color: transparent;
+  border: transparent;
   padding: 15px;
   position: sticky;
   top: 10px;
@@ -171,7 +216,7 @@ code {
 .scroll-nav__list {
   margin: 0;
   padding-left: 0.4em;
-  list-style: none !important;
+  list-style: none;
 }
 
 .scroll-nav__list li {
@@ -201,4 +246,9 @@ code {
 .scroll-nav__link {
   color: #0645ad;
   text-decoration: none;
+}
+
+.scroll-nav__title {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
