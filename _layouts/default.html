@@ -63,6 +63,35 @@
         })
     </script>
 
+  <button id="back-to-top-btn">回到顶部</button>
+
+   <script>
+    // 获取按钮元素
+var backToTopButton = document.getElementById("back-to-top-btn");
+
+// 监听页面滚动事件
+window.onscroll = function() {
+    // 如果页面滚动超过 20px，显示按钮，否则隐藏按钮
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// 平滑滚动到页面顶部
+backToTopButton.addEventListener("click", function() {
+    // 平滑滚动到顶部
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+
+
+   </script>
+
   </body>
 </html>
 

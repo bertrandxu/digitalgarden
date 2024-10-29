@@ -252,3 +252,16 @@ code {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 250px;
+  padding: 10px 20px;
+  background-color: #33333356;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

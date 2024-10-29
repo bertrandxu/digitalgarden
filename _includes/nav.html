@@ -1,3 +1,15 @@
 <div>
     <a class="internal-link" href="{{ site.baseurl }}/"><b>{{ site.title }}</b></a>
 </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+<script type="text/javascript">
+  algoliasearchNetlify({
+    appId: '90AMJ5K3L2',
+    apiKey: '<YOUR_ALGOLIA_SEARCH_API_KEY>',
+    siteId: '14695f70-10d3-4b8d-84fc-e05da1454abb',
+    branch: 'main',
+    selector: 'div#search',
+  });
+</script>
