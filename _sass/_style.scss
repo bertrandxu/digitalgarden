@@ -100,7 +100,7 @@ a {
 }
 
 *:focus {
-  background: #ffe8bc !important;
+  background: #ffffff !important;
   color: black !important;
 }
 
@@ -118,10 +118,12 @@ nav {
   /* 可根据需要添加其他样式，如边框、阴影等 */
 }
 
+/* 主页侧边栏自我介绍样式 */
 .sidebar-profile {
   text-align: center;
   
   img {
+      margin-top: 10px;
       border-radius: 30%;
       width: 110px; /* Adjust size as needed */
       height: 100px; /* Adjust size as needed */
@@ -137,19 +139,6 @@ nav {
       font-size: 1em;
   } 
   
-  .social-links {
-      margin-top: 10px;
-      
-      a {
-          display: inline-block;
-          margin-right: 10px;
-          color: #333; /* Adjust color as needed */
-          
-          i {
-              font-size: 1.5em;
-          }
-      }
-  }
 }
 
 
@@ -190,6 +179,7 @@ code {
   cursor: help;
 }
 
+/* 侧边栏文章目录样式 */
 .scroll-nav {
   background-color: transparent;
   border: transparent;
@@ -253,6 +243,7 @@ code {
   margin-bottom: 10px;
 }
 
+/* 向上滚动回到顶部按钮样式 */
 #back-to-top-btn {
   display: none;
   position: fixed;
@@ -264,4 +255,38 @@ code {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+/* 根据您的需求设置搜索框的样式 */
+div#search {
+  /* 设置搜索框的宽度 */
+  width: 300px;
+  
+  /* 设置搜索框的高度 */
+  height: 20px;
+  
+  /* 设置搜索框的边框样式 */
+  border: 1px solid #ccc;
+  
+  /* 设置搜索框的圆角 */
+  border-radius: 5px;
+  
+  /* 设置搜索框的内边距 */
+  padding: 0px;
+
+  /* 设置搜索框与页面顶端的距离 */
+  top: 20px; /* 根据需要调整距离 */
+  
+  /* 设置搜索框的背景颜色 */
+  background-color: #ffffff;
+  
+  /* 设置搜索框中文字的颜色 */
+  color: #333;
+  
+  /* 设置搜索框中文字的字体大小 */
+  font-size: 16px;
+
+  /* 搜索框向右对齐 */
+  margin-left: auto;
 }
